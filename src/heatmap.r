@@ -8,7 +8,7 @@ if (!require("gplots")) {
 }
 
 # Import data from CSV
-rawCSV <- read.csv("../DataWrangling/import/data/UsefulVotesData.csv")
+rawCSV <- read.csv("data/UsefulVotesData.csv")
 
 # Pull out the desired columns (day of week and vote count)
 voteCount <- as.numeric(rawCSV$votes_count)

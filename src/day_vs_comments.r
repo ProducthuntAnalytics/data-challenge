@@ -1,5 +1,5 @@
 # Import data from CSV
-rawCSV <- read.csv("./UsefulVotesData.csv")
+rawCSV <- read.csv("data/UsefulVotesData.csv")
 
 # Pull out the desired columns (day of week and vote count)
 dayOfWeek <- as.character(rawCSV$day_of_week)

@@ -1,5 +1,5 @@
 # Import data from CSV
-rawCSV <- read.csv("./userData.csv",
+rawCSV <- read.csv("data/userData.csv",
                    sep = ";",
                    row.names = NULL)
 
