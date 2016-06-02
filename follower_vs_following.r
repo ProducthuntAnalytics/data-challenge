@@ -1,5 +1,5 @@
 # Import data from CSV
-rawCSV <- read.csv("../DataWrangling/import/data/UserData.csv",
+rawCSV <- read.csv("./userData.csv",
                    sep = ";",
                    row.names = NULL)
 
@@ -7,11 +7,14 @@ rawCSV <- read.csv("../DataWrangling/import/data/UserData.csv",
 followerCount <- as.numeric(rawCSV$followers_count)
 followingCount <- as.numeric(rawCSV$followings_count)
 
+
+pdf("./graphs/follower_vs_following.pdf")
+
 # Create a plot using these 2 columns
 plot(followingCount, followerCount,
- xlab = "The number of people followed", ylab = "The number of followers",
- main = "Does following more people yield more followers?")
+ xlab = "The number of people followed", ylab = "The number of followers")
+ # main = "Does following more people yield more followers?")
 
 # Output to file (days_vs_votes_bar_graph.png)
-dev.copy(png, "graphs/follower_vs_following.png")
+dev.copy(pdf, "./graphs/follower_vs_following.pdf")
 dev.off()

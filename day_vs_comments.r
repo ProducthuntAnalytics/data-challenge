@@ -2,7 +2,7 @@
 rawCSV <- read.csv("./UsefulVotesData.csv")
 
 # Pull out the desired columns (day of week and vote count)
-dayOfWeek <- as.character(rawCSV$day.of.week)
+dayOfWeek <- as.character(rawCSV$day_of_week)
 voteCount <- as.numeric(rawCSV$comments_count)
 
 # Create vectors to be used for graphing
@@ -42,11 +42,13 @@ for (rowNum in 1 : nrow(rawCSV [6])) {
 print("All done, here's the output")
 print(voteVector)
 
+pdf("./graphs/days_vs_comments_bar_graph.pdf")
+
 # Create a plot using these 2 columns
 barplot(voteVector, names = dayVector,
- xlab = "Day of week of post", ylab = "Comment count",
- main = "Comparing a product's post day to the number of comments it earned")
+ xlab = "Day of week of post", ylab = "Comment count")
+ # main = "Comparing a product's post day to the number of comments it earned")
 
 # Output to file (days_vs_votes_bar_graph.png)
-dev.copy(png, "./graphs/days_vs_comments_bar_graph.png")
+dev.copy(pdf, "./graphs/days_vs_comments_bar_graph.pdf")
 dev.off()

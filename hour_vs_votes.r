@@ -29,11 +29,13 @@ for (i in 0:23) {
 print("All done, here's the output")
 print(voteVector)
 
+pdf("./graphs/hour_vs_votes_bar_graph.pdf")
+
 # Create a plot using these 2 columns
 barplot(voteVector, names = hourVector,
- xlab = "Hour of post (EDT?)", ylab = "Vote count",
- main = "Comparing a product's post hour to the number of votes it earned")
+ xlab = "Hour of post (EDT?)", ylab = "Vote count")
+ # main = "Comparing a product's post hour to the number of votes it earned")
 
 # Output to file (days_vs_votes_bar_graph.png)
-dev.copy(png, "./graphs/hour_vs_votes_bar_graph.png")
+dev.copy(pdf, "./graphs/hour_vs_votes_bar_graph.pdf")
 dev.off()
