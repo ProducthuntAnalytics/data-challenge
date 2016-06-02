@@ -3,7 +3,7 @@ rawCSV <- read.csv("./UsefulVotesData.csv")
 
 # Pull out the desired columns (created_at and vote_count)
 timeStamp <- as.character(rawCSV$created_at)
-voteCount <- as.numeric(rawCSV$votes_count)
+voteCount <- as.numeric(rawCSV$comments_count)
 
 # Create vectors to be used for graphing
 voteVector <- vector(mode = "numeric", length = 24)
@@ -32,8 +32,8 @@ print(voteVector)
 # Create a plot using these 2 columns
 barplot(voteVector, names = hourVector,
  xlab = "Hour of post (EDT?)", ylab = "Vote count",
- main = "Comparing a product's post hour to the number of votes it earned")
+ main = "Comparing a product's post hour to the number of coments it received")
 
 # Output to file (days_vs_votes_bar_graph.png)
-dev.copy(png, "./graphs/hour_vs_votes_bar_graph.png")
+dev.copy(png, "./graphs/hour_vs_comments_bar_graph.png")
 dev.off()
