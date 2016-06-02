@@ -13,5 +13,5 @@ plot(followingCount, followerCount,
  main = "Does following more people yield more followers?")
 
 # Output to file (days_vs_votes_bar_graph.png)
-dev.copy(png, "follower_vs_following.png")
+dev.copy(png, "graphs/follower_vs_following.png")
 dev.off()
