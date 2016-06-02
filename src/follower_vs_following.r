@@ -1,6 +1,6 @@
 # Import data from CSV
 rawCSV <- read.csv("data/userData.csv",
-                   sep = ";",
+                    sep = ";",
                    row.names = NULL)
 
 # Pull out the desired columns (created_at and vote_count)
