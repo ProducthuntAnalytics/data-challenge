@@ -46,8 +46,8 @@ pdf("./graphs/days_vs_votes_bar_graph.pdf")
 
 # Create a plot using these 2 columns
 barplot(voteVector, names = dayVector,
- xlab = "Day of week of post", ylab = "Vote count",
- main = "Comparing a product's post day to the number of votes it earned")
+ xlab = "Day of week of post", ylab = "Vote count"
+)
 
 # Output to file (days_vs_votes_bar_graph.png)
 dev.copy(pdf, "./graphs/days_vs_votes_bar_graph.pdf")
