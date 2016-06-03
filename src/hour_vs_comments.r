@@ -1,5 +1,5 @@
 # Import data from CSV
-rawCSV <- read.csv("data/UsefulVotesData.csv")
+#rawCSV <- read.csv("data/UsefulVotesData.csv")
 
 # Pull out the desired columns (created_at and vote_count)
 timeStamp <- as.character(rawCSV$created_at)

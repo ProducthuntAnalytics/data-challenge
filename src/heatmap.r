@@ -8,7 +8,7 @@ if (!require("gplots")) {
 }
 
 # Import data from CSV
-rawCSV <- read.csv("data/UsefulVotesData.csv")
+#rawCSV <- read.csv("./data/UsefulVotesData.csv")
 
 # Pull out the desired columns (day of week and vote count)
 voteCount <- as.numeric(rawCSV$votes_count)
@@ -20,11 +20,11 @@ dayAndTimeList <- vector(length = 24 * 7)
 # Create a "data frame", used for graphing - I think
 dataFrame <- data.frame(timeStamp, voteCount);
 
-# Aggregate a list such: [Sunday@0, Sunday@1, Sunday@2, etc.]
+# Aggregate a list such: [Sunday@1, Sunday@1, Sunday@24, etc.]
 for (rowNum in 1 : nrow(rawCSV [6])) {
   POSIXStamp <- as.POSIXlt(dataFrame$timeStamp [rowNum])
-  dayAndTimeList [(24 * (POSIXStamp$wday - 1)) + POSIXStamp$hour] <-
-    dayAndTimeList [(24 * (POSIXStamp$wday - 1)) + POSIXStamp$hour] +
+  dayAndTimeList [(24 * (POSIXStamp$wday)) + POSIXStamp$hour + 1] <-
+    dayAndTimeList [(24 * (POSIXStamp$wday)) + POSIXStamp$hour + 1] +
     dataFrame$voteCount [rowNum]
 }
 
@@ -43,6 +43,9 @@ for (i in 0:23) {
   hourVector [i + 1] <- i
 }
 rownames(dataMatrix) <- hourVector
+
+print("here's the data:")
+print(dataMatrix)
 
 graphColors <- colorRampPalette(c("red", "yellow", "green"))(n = 400)
 

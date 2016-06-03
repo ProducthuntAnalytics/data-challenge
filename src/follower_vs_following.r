@@ -1,7 +1,7 @@
 # Import data from CSV
-rawCSV <- read.csv("data/userData.csv",
-                    sep = ";",
-                   row.names = NULL)
+#rawCSV <- read.csv("data/userData.csv",
+                  #  sep = ";",
+                  # row.names = NULL)
 
 # Pull out the desired columns (created_at and vote_count)
 followerCount <- as.numeric(rawCSV$followers_count)
