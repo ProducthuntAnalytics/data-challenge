@@ -1,6 +1,6 @@
 # Import UsefulVotesData from CSV
 rawCSV <- read.csv("data/UsefulVotesData.csv")
-source("./src/days_vs_votes.r")
+source("./src/day_vs_votes.r")
 source("./src/day_vs_comments.r")
 source("./src/hour_vs_comments.r")
 source("./src/hour_vs_votes.r")
